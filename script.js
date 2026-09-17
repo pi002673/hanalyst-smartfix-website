@@ -25,10 +25,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ── Active nav highlight ──
-const sections = document.querySelectorAll('section[id]');
+const sections   = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-const observer = new IntersectionObserver(entries => {
+const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navAnchors.forEach(a => a.classList.remove('active'));
@@ -38,7 +38,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-40% 0px -55% 0px' });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => sectionObserver.observe(s));
 
 // ── Scroll reveal ──
 const revealEls = document.querySelectorAll(
@@ -66,9 +66,12 @@ document.getElementById('contactForm')?.addEventListener('submit', function (e) 
   const company = document.getElementById('company').value;
   const message = document.getElementById('message').value;
 
-  const subject = encodeURIComponent('HANALYST SmartFix — Demo Request');
-  const body    = encodeURIComponent(
-    `Nome: ${name}\nEmail: ${email}\nEmpresa: ${company}\n\n${message}`
+  const isEn    = document.documentElement.lang === 'en';
+  const subject = encodeURIComponent(
+    isEn ? 'HANALYST SmartFix — Demo Request' : 'HANALYST SmartFix — Pedido de Demo'
+  );
+  const body = encodeURIComponent(
+    `${isEn ? 'Name' : 'Nome'}: ${name}\nEmail: ${email}\n${isEn ? 'Company' : 'Empresa'}: ${company}\n\n${message}`
   );
 
   window.location.href =
