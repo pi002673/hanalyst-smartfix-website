@@ -1,63 +1,81 @@
-// Smooth scrolling for anchor links
+// ── Mobile nav ──
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks  = document.querySelector('.nav-links');
+
+hamburger?.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-    });
-});
-
-// Form submission
-document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
     e.preventDefault();
-    
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const company = this.querySelector('input[type="text"]:nth-of-type(2)').value;
-    
-    const mailtoLink = `mailto:info@inetum.com?subject=HANALYST SmartFix - Demo Request&body=Nome: ${name}%0AEmail: ${email}%0AEmpresa: ${company}%0A%0A`;
-    
-    window.location.href = mailtoLink;
+    const navH = document.querySelector('.nav')?.offsetHeight || 64;
+    const top  = target.getBoundingClientRect().top + window.scrollY - navH - 16;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
 });
 
-// Active navigation link highlighting
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
+// ── Active nav highlight ──
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-// Add styles for active nav
-const style = document.createElement('style');
-style.textContent = `
-    .nav-menu a.active {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 2px;
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navAnchors.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      active?.classList.add('active');
     }
-`;
-document.head.appendChild(style);
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
 
-console.log('HANALYST SmartFix website loaded');
+sections.forEach(s => observer.observe(s));
+
+// ── Scroll reveal ──
+const revealEls = document.querySelectorAll(
+  '.card, .step, .mode-card, .rule-card, .benefit-card, .spec-row, .stat-pill'
+);
+
+revealEls.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 40);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -60px 0px' });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ── Contact form ──
+document.getElementById('contactForm')?.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name    = document.getElementById('name').value;
+  const email   = document.getElementById('email').value;
+  const company = document.getElementById('company').value;
+  const message = document.getElementById('message').value;
+
+  const subject = encodeURIComponent('HANALYST SmartFix — Demo Request');
+  const body    = encodeURIComponent(
+    `Nome: ${name}\nEmail: ${email}\nEmpresa: ${company}\n\n${message}`
+  );
+
+  window.location.href =
+    `mailto:sap.sc.technology.coordination.portugal@inetum.com?subject=${subject}&body=${body}`;
+});
+
+// ── Active nav style injection ──
+const style = document.createElement('style');
+style.textContent = `.nav-links a.active { color: var(--accent) !important; }`;
+document.head.appendChild(style);
