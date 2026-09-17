@@ -142,116 +142,248 @@
       <h2>Como a Solução Está Construída</h2>
       <p class="section-desc">Arquitetura segura e enterprise-grade baseada em SAP BTP e SAP AI Core</p>
 
-      <div class="arch-diagram">
+      <div class="arch-svg-wrap">
+        <svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" class="arch-svg" role="img" aria-label="Diagrama de Arquitetura HANALYST SmartFix">
+          <defs>
+            <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#63b3ed"/>
+              <stop offset="100%" stop-color="#4299e1"/>
+            </linearGradient>
+            <linearGradient id="gPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9f7aea"/>
+              <stop offset="100%" stop-color="#805ad5"/>
+            </linearGradient>
+            <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f6ad55"/>
+              <stop offset="100%" stop-color="#ed8936"/>
+            </linearGradient>
+            <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#68d391"/>
+              <stop offset="100%" stop-color="#48bb78"/>
+            </linearGradient>
+            <linearGradient id="gJudge" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f6ad55"/>
+              <stop offset="100%" stop-color="#9f7aea"/>
+            </linearGradient>
+            <linearGradient id="gArrow1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#63b3ed"/>
+              <stop offset="100%" stop-color="#9f7aea"/>
+            </linearGradient>
+            <linearGradient id="gArrow2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9f7aea"/>
+              <stop offset="100%" stop-color="#f6ad55"/>
+            </linearGradient>
+            <linearGradient id="gReturn" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#68d391"/>
+              <stop offset="100%" stop-color="#63b3ed"/>
+            </linearGradient>
+            <linearGradient id="gBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#141928"/>
+              <stop offset="100%" stop-color="#1a2035"/>
+            </linearGradient>
+            <filter id="glow-blue">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-orange">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="url(#gArrow1)"/>
+            </marker>
+            <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="url(#gArrow2)"/>
+            </marker>
+            <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="url(#gReturn)"/>
+            </marker>
+            <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="3" refY="6" orient="auto">
+              <path d="M0,0 L6,0 L3,8 z" fill="#f6ad55"/>
+            </marker>
+          </defs>
 
-        <!-- Top 3 layers side by side -->
-        <div class="arch-layers-row">
+          <!-- ── Background ── -->
+          <rect width="960" height="540" fill="#0a0d14" rx="12"/>
 
-          <!-- Layer 1: S/4HANA -->
-          <div class="arch-layer layer-s4">
-            <div class="arch-layer-label">SAP S/4HANA</div>
-            <div class="arch-layer-inner">
-              <div class="arch-box box-main">
-                <div class="arch-box-icon">&#x1F4BB;</div>
-                <div>
-                  <strong>ZSMARTFIX</strong>
-                  <span>Transação ABAP</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- Subtle grid -->
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,179,237,0.04)" stroke-width="1"/>
+          </pattern>
+          <rect width="960" height="540" fill="url(#grid)" rx="12"/>
 
-          <!-- Connector 1→2 -->
-          <div class="arch-connector">
-            <span class="arch-connector-line"></span>
-            <span class="arch-connector-tip">▶</span>
-            <span class="arch-connector-label">HTTP / RFC</span>
-          </div>
+          <!-- Glow orbs -->
+          <circle cx="160" cy="160" r="120" fill="rgba(99,179,237,0.05)"/>
+          <circle cx="800" cy="200" r="100" fill="rgba(159,122,234,0.05)"/>
+          <circle cx="480" cy="420" r="80"  fill="rgba(104,211,145,0.04)"/>
 
-          <!-- Layer 2: BTP AI Core -->
-          <div class="arch-layer layer-btp">
-            <div class="arch-layer-label">SAP BTP — AI Core</div>
-            <div class="arch-layer-inner">
-              <div class="arch-box box-btp">
-                <div class="arch-box-icon">&#x2601;</div>
-                <div>
-                  <strong>AI Core Service</strong>
-                  <span>Orquestração &amp; Compliance</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- ══════════════════════════════════════════
+               ROW 1 — 3 main boxes
+          ══════════════════════════════════════════ -->
 
-          <!-- Connector 2→3 -->
-          <div class="arch-connector">
-            <span class="arch-connector-line"></span>
-            <span class="arch-connector-tip">▶</span>
-            <span class="arch-connector-label">API Calls</span>
-          </div>
+          <!-- ── Box 1: S/4HANA ── -->
+          <rect x="28" y="48" width="230" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(99,179,237,0.35)" stroke-width="1.5"/>
+          <rect x="28" y="48" width="230" height="4" rx="2" fill="url(#gBlue)"/>
+          <!-- label -->
+          <text x="43" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#63b3ed" letter-spacing="1.5">SAP S/4HANA</text>
+          <!-- icon circle -->
+          <circle cx="76" cy="130" r="26" fill="rgba(99,179,237,0.12)" stroke="rgba(99,179,237,0.3)" stroke-width="1"/>
+          <text x="76" y="137" font-size="20" text-anchor="middle" font-family="serif">💻</text>
+          <!-- title -->
+          <text x="112" y="122" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#e8ecf4">ZSMARTFIX</text>
+          <text x="112" y="139" font-family="Inter,sans-serif" font-size="11" fill="#8a95b0">Transação ABAP</text>
+          <!-- sub-items -->
+          <rect x="44" y="160" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
+          <text x="58" y="168" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Scanner de código</text>
+          <rect x="44" y="176" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
+          <text x="58" y="184" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Diff viewer side-by-side</text>
+          <rect x="44" y="192" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
+          <text x="58" y="200" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Aprovação individual</text>
 
-          <!-- Layer 3: LLMs + Judge -->
-          <div class="arch-layer layer-llm">
-            <div class="arch-layer-label">Multi-LLM + Juiz</div>
-            <div class="arch-layer-inner layer-llm-inner">
-              <div class="llm-models">
-                <div class="llm-model model-claude"><span class="llm-icon">&#x25C6;</span><span>Claude</span></div>
-                <div class="llm-model model-mistral"><span class="llm-icon">&#x25C6;</span><span>Mistral</span></div>
-                <div class="llm-model model-gpt"><span class="llm-icon">&#x25C6;</span><span>GPT</span></div>
-                <div class="llm-model model-other"><span class="llm-icon">&#x25C6;</span><span>outros...</span></div>
-              </div>
-              <div class="judge-arrow"><span>▼</span><span class="judge-caption">respostas</span></div>
-              <div class="arch-box box-judge">
-                <div class="arch-box-icon">&#x2696;</div>
-                <div>
-                  <strong>Juiz (Judge LLM)</strong>
-                  <span>Seleciona a melhor resposta</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- ── Arrow 1→2 ── -->
+          <line x1="260" y1="133" x2="328" y2="133" stroke="url(#gArrow1)" stroke-width="2" marker-end="url(#arrowBlue)"/>
+          <text x="294" y="124" font-family="Inter,sans-serif" font-size="9" fill="#8a95b0" text-anchor="middle">HTTP/RFC</text>
+          <!-- return dashed line above -->
+          <line x1="328" y1="120" x2="260" y2="120" stroke="url(#gReturn)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowGreen)" opacity="0.6"/>
 
-        </div>
+          <!-- ── Box 2: SAP BTP / AI Core ── -->
+          <rect x="332" y="48" width="230" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(159,122,234,0.35)" stroke-width="1.5"/>
+          <rect x="332" y="48" width="230" height="4" rx="2" fill="url(#gPurple)"/>
+          <text x="347" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#9f7aea" letter-spacing="1.5">SAP BTP — AI CORE</text>
+          <!-- icon -->
+          <circle cx="380" cy="130" r="26" fill="rgba(159,122,234,0.12)" stroke="rgba(159,122,234,0.3)" stroke-width="1"/>
+          <text x="380" y="137" font-size="20" text-anchor="middle" font-family="serif">☁️</text>
+          <!-- title -->
+          <text x="416" y="122" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#e8ecf4">AI Core Service</text>
+          <text x="416" y="139" font-family="Inter,sans-serif" font-size="11" fill="#8a95b0">Orquestração &amp; Segurança</text>
+          <!-- sub -->
+          <rect x="348" y="160" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
+          <text x="362" y="168" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Compliance GDPR</text>
+          <rect x="348" y="176" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
+          <text x="362" y="184" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Sem saída de dados SAP</text>
+          <rect x="348" y="192" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
+          <text x="362" y="200" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Roteamento multi-modelo</text>
 
-        <!-- Return arrow -->
-        <div class="arch-return">
-          <div class="arch-return-line">
-            <span class="arch-return-label">&#x21A9; Código remediado retorna ao S/4HANA</span>
-          </div>
-        </div>
+          <!-- ── Arrow 2→3 ── -->
+          <line x1="564" y1="133" x2="632" y2="133" stroke="url(#gArrow2)" stroke-width="2" marker-end="url(#arrowPurple)"/>
+          <text x="598" y="124" font-family="Inter,sans-serif" font-size="9" fill="#8a95b0" text-anchor="middle">API Calls</text>
+          <line x1="632" y1="120" x2="564" y2="120" stroke="url(#gReturn)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowGreen)" opacity="0.6"/>
 
-        <!-- Review screen -->
-        <div class="arch-review">
-          <div class="arch-layer-label">Ecrã de Revisão — dentro do S/4HANA (ZSMARTFIX)</div>
-          <div class="review-screen">
-            <div class="review-panel review-before">
-              <div class="review-panel-header">
-                <span class="review-dot red"></span>
-                <span>Código Original (ECC)</span>
-              </div>
-              <div class="review-code">
-                <span class="rc-bad">SELECT SINGLE matnr maktx</span>
-                <span class="rc-bad">  FROM mara INTO (lv_matnr, lv_maktx)</span>
-                <span class="rc-bad">  WHERE matnr = p_matnr.</span>
-              </div>
-            </div>
-            <div class="review-panel review-after">
-              <div class="review-panel-header">
-                <span class="review-dot green"></span>
-                <span>Código Remediado (S/4HANA)</span>
-              </div>
-              <div class="review-code">
-                <span class="rc-good">SELECT SINGLE matnr, maktx</span>
-                <span class="rc-good">  FROM mara INTO (@lv_matnr, @lv_maktx)</span>
-                <span class="rc-good">  WHERE matnr = @p_matnr UP TO 1 ROWS.</span>
-              </div>
-            </div>
-            <div class="review-actions">
-              <button class="review-btn approve">&#x2714; Aprovar</button>
-              <button class="review-btn reject">&#x2718; Rejeitar</button>
-            </div>
-          </div>
-        </div>
+          <!-- ── Box 3: Multi-LLM ── -->
+          <rect x="636" y="48" width="296" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(246,173,85,0.35)" stroke-width="1.5"/>
+          <rect x="636" y="48" width="296" height="4" rx="2" fill="url(#gOrange)"/>
+          <text x="651" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#f6ad55" letter-spacing="1.5">MULTI-LLM + JUIZ</text>
 
+          <!-- LLM model chips -->
+          <!-- Claude -->
+          <rect x="651" y="84" width="58" height="38" rx="8" fill="rgba(99,179,237,0.1)" stroke="rgba(99,179,237,0.35)" stroke-width="1"/>
+          <circle cx="665" cy="97" r="5" fill="#63b3ed"/>
+          <text x="674" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#63b3ed">Claude</text>
+          <text x="659" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">Anthropic</text>
+
+          <!-- Mistral -->
+          <rect x="717" y="84" width="58" height="38" rx="8" fill="rgba(159,122,234,0.1)" stroke="rgba(159,122,234,0.35)" stroke-width="1"/>
+          <circle cx="731" cy="97" r="5" fill="#9f7aea"/>
+          <text x="740" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#9f7aea">Mistral</text>
+          <text x="724" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">Mistral AI</text>
+
+          <!-- GPT -->
+          <rect x="783" y="84" width="58" height="38" rx="8" fill="rgba(104,211,145,0.1)" stroke="rgba(104,211,145,0.35)" stroke-width="1"/>
+          <circle cx="797" cy="97" r="5" fill="#68d391"/>
+          <text x="806" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#68d391">GPT</text>
+          <text x="788" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">OpenAI</text>
+
+          <!-- Others -->
+          <rect x="849" y="84" width="68" height="38" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="883" y="99" font-family="Inter,sans-serif" font-size="11" fill="#5a6480" text-anchor="middle">···</text>
+          <text x="883" y="115" font-family="Inter,sans-serif" font-size="8" fill="#5a6480" text-anchor="middle">outros</text>
+
+          <!-- Down arrows to judge -->
+          <line x1="680" y1="122" x2="780" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
+          <line x1="746" y1="122" x2="790" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
+          <line x1="812" y1="122" x2="800" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
+          <line x1="870" y1="122" x2="810" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
+
+          <!-- Judge box -->
+          <rect x="720" y="148" width="192" height="52" rx="8" fill="rgba(246,173,85,0.1)" stroke="rgba(246,173,85,0.45)" stroke-width="1.5" filter="url(#glow-orange)"/>
+          <text x="740" y="170" font-size="16" font-family="serif">⚖️</text>
+          <text x="762" y="168" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#f6ad55">Juiz (Judge LLM)</text>
+          <text x="762" y="183" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Seleciona a melhor resposta</text>
+
+          <!-- ══════════════════════════════════════════
+               Return flow arc
+          ══════════════════════════════════════════ -->
+          <path d="M 816 200 Q 816 240 480 240 Q 144 240 143 200" fill="none" stroke="url(#gReturn)" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowGreen)"/>
+          <rect x="370" y="228" width="220" height="20" rx="4" fill="rgba(104,211,145,0.08)"/>
+          <text x="480" y="242" font-family="Inter,sans-serif" font-size="10" fill="#68d391" text-anchor="middle" font-weight="600">↩ Código remediado retorna ao S/4HANA</text>
+
+          <!-- ══════════════════════════════════════════
+               ROW 2 — Review screen
+          ══════════════════════════════════════════ -->
+          <rect x="28" y="278" width="904" height="230" rx="12" fill="url(#gBg1)" stroke="rgba(104,211,145,0.3)" stroke-width="1.5"/>
+          <rect x="28" y="278" width="904" height="4" rx="2" fill="url(#gGreen)"/>
+
+          <!-- Header -->
+          <text x="44" y="303" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#68d391" letter-spacing="1.5">ECRÃ DE REVISÃO — DENTRO DO S/4HANA (ZSMARTFIX)</text>
+
+          <!-- Divider line between panels -->
+          <line x1="480" y1="316" x2="480" y2="490" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+          <!-- ── Left panel: Original ECC ── -->
+          <rect x="44" y="316" width="420" height="24" rx="4" fill="rgba(252,129,129,0.07)"/>
+          <circle cx="60" cy="328" r="5" fill="#fc8181"/>
+          <text x="72" y="332" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fc8181">Código Original (ECC)</text>
+
+          <!-- Code lines ECC -->
+          <rect x="44" y="348" width="420" height="130" rx="6" fill="rgba(0,0,0,0.25)"/>
+          <text x="60" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">SELECT SINGLE</text>
+          <text x="172" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> matnr maktx</text>
+          <text x="60" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  FROM</text>
+          <text x="107" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> mara</text>
+          <text x="60" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  INTO</text>
+          <text x="107" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> (lv_matnr, lv_maktx)</text>
+          <text x="60" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  WHERE</text>
+          <text x="115" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> matnr = p_matnr.</text>
+          <text x="60" y="448" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE-POOLS</text>
+          <text x="152" y="448" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9">: slis.</text>
+          <text x="60" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">DATA</text>
+          <text x="91" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> gt_fcat </text>
+          <text x="155" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE</text>
+          <text x="183" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> slis_t_fieldcat_alv.</text>
+
+          <!-- ── Right panel: Remediado S/4HANA ── -->
+          <rect x="496" y="316" width="420" height="24" rx="4" fill="rgba(104,211,145,0.07)"/>
+          <circle cx="512" cy="328" r="5" fill="#68d391"/>
+          <text x="524" y="332" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#68d391">Código Remediado (S/4HANA)</text>
+
+          <rect x="496" y="348" width="420" height="130" rx="6" fill="rgba(0,0,0,0.25)"/>
+          <text x="512" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">SELECT SINGLE</text>
+          <text x="624" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> matnr, maktx</text>
+          <text x="512" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  FROM</text>
+          <text x="559" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> mara</text>
+          <text x="512" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  INTO</text>
+          <text x="559" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> (@lv_matnr, @lv_maktx)</text>
+          <text x="512" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  WHERE</text>
+          <text x="567" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> matnr = @p_matnr</text>
+          <text x="512" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  UP TO</text>
+          <text x="563" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> 1 </text>
+          <text x="584" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">ROWS</text>
+          <text x="625" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9">.</text>
+          <text x="512" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">DATA</text>
+          <text x="543" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> gt_fcat </text>
+          <text x="607" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE</text>
+          <text x="635" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> cl_salv_table=&gt;t_column_ref.</text>
+
+          <!-- ── Approve / Reject buttons ── -->
+          <rect x="44" y="492" width="110" height="28" rx="6" fill="rgba(104,211,145,0.15)" stroke="rgba(104,211,145,0.4)" stroke-width="1"/>
+          <text x="99" y="510" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#68d391" text-anchor="middle">✔ Aprovar</text>
+
+          <rect x="164" y="492" width="110" height="28" rx="6" fill="rgba(252,129,129,0.1)" stroke="rgba(252,129,129,0.35)" stroke-width="1"/>
+          <text x="219" y="510" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#fc8181" text-anchor="middle">✘ Rejeitar</text>
+
+          <text x="310" y="510" font-family="Inter,sans-serif" font-size="10" fill="#5a6480">← Cada mudança aprovada ou rejeitada individualmente</text>
+
+        </svg>
       </div>
 
       <!-- Security badge -->

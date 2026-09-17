@@ -667,7 +667,21 @@ pre {
 .footer-links a { font-size: 12px; color: var(--text-dim); transition: color 0.2s; }
 .footer-links a:hover { color: var(--accent); }
 
-/* ── ARCHITECTURE DIAGRAM ── */
+/* ── ARCHITECTURE SVG ── */
+.arch-svg-wrap {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 32px;
+}
+.arch-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── ARCHITECTURE DIAGRAM (legacy CSS kept for fallback) ── */
 .arch-diagram {
   display: flex;
   flex-direction: column;
