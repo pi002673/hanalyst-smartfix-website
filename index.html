@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HANALYST SmartFix — Remediação automatizada de código ABAP de ECC para S/4HANA" />
+  <meta name="description" content="HANALYST SmartFix — Remediação automatizada de código ABAP de ECC para S/4HANA pela Inetum" />
   <title>HANALYST SmartFix — ECC → S/4HANA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +22,11 @@
       </a>
       <nav class="nav-links">
         <a href="#about">Sobre</a>
+        <a href="#architecture">Arquitetura</a>
         <a href="#how">Como Funciona</a>
         <a href="#rules">Regras</a>
         <a href="#benefits">Benefícios</a>
-        <a href="#specs">Técnico</a>
-        <a href="#contact" class="nav-cta">Contacto</a>
+        <a href="#contact">Contacto</a>
       </nav>
       <a href="index.en.html" class="lang-switch" title="Switch to English">EN</a>
       <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
@@ -37,35 +37,35 @@
   <section class="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-inner">
-      <div class="hero-tag">SAP Technology · Inetum Portugal</div>
+      <div class="hero-tag">Desenvolvido pela Inetum · Portugal</div>
       <h1 class="hero-title">
         Remediação Automatizada<br />
         <span class="gradient-text">ECC → S/4HANA</span>
       </h1>
       <p class="hero-sub">
         Transforme código ABAP legado em código S/4HANA-ready em dias, não em meses.<br />
-        IA generativa combinada com regras determinísticas para precisão máxima.
+        IA generativa multi-modelo com juiz inteligente, potenciada pelo SAP AI Core.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Solicitar Demo</a>
-        <a href="#how" class="btn btn-ghost">Como Funciona ↓</a>
+        <a href="#architecture" class="btn btn-ghost">Ver Arquitetura ↓</a>
       </div>
       <div class="hero-stats">
+        <div class="stat-pill">
+          <span class="stat-num">30–60%</span>
+          <span class="stat-label">Redução de Esforço</span>
+        </div>
         <div class="stat-pill">
           <span class="stat-num">18+</span>
           <span class="stat-label">Regras de Transformação</span>
         </div>
         <div class="stat-pill">
+          <span class="stat-num">Multi-LLM</span>
+          <span class="stat-label">Claude · Mistral · GPT</span>
+        </div>
+        <div class="stat-pill">
           <span class="stat-num">100%</span>
           <span class="stat-label">ABAP Nativo</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">AI + Rules</span>
-          <span class="stat-label">Motor Híbrido</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">4</span>
-          <span class="stat-label">Modos de Execução</span>
         </div>
       </div>
     </div>
@@ -75,26 +75,26 @@
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
           <span class="code-filename">ZPROGRAM.abap</span>
         </div>
-        <pre class="code-before"><span class="code-comment">* ECC — Before SmartFix</span>
+        <pre class="code-before"><span class="code-comment">* ECC — Antes do SmartFix</span>
 <span class="code-kw">SELECT SINGLE</span> matnr maktx
   <span class="code-kw">FROM</span> mara
   <span class="code-kw">INTO</span> (lv_matnr, lv_maktx)
   <span class="code-kw">WHERE</span> matnr = p_matnr.
 
 <span class="code-kw">TYPE-POOLS</span>: slis.
-<span class="code-kw">DATA</span> gt_fieldcat <span class="code-kw">TYPE</span> slis_t_fieldcat_alv.</pre>
+<span class="code-kw">DATA</span> gt_fcat <span class="code-kw">TYPE</span> slis_t_fieldcat_alv.</pre>
         <div class="code-arrow">
           <span class="arrow-label">SmartFix</span>
           <span class="arrow-sym">⟶</span>
         </div>
-        <pre class="code-after"><span class="code-comment">* S/4HANA — After SmartFix</span>
+        <pre class="code-after"><span class="code-comment">* S/4HANA — Após SmartFix</span>
 <span class="code-kw">SELECT SINGLE</span> matnr, maktx
   <span class="code-kw">FROM</span> mara
   <span class="code-kw">INTO</span> (@lv_matnr, @lv_maktx)
   <span class="code-kw">WHERE</span> matnr = @p_matnr
   <span class="code-kw">UP TO</span> 1 <span class="code-kw">ROWS</span>.
 
-<span class="code-kw">DATA</span> gt_fieldcat <span class="code-kw">TYPE</span>
+<span class="code-kw">DATA</span> gt_fcat <span class="code-kw">TYPE</span>
   cl_salv_table=&gt;t_column_ref.</pre>
       </div>
     </div>
@@ -106,8 +106,9 @@
       <div class="section-label">Visão Geral</div>
       <h2>O que é o HANALYST SmartFix?</h2>
       <p class="section-desc">
-        Uma solução desenvolvida em ABAP puro pela equipa SAP Technology da Inetum Portugal que analisa, sugere e aplica automaticamente
-        as remediações necessárias para tornar o código ECC compatível com SAP S/4HANA — diretamente dentro do sistema SAP.
+        Uma solução desenvolvida pela <strong>Inetum</strong> em ABAP puro que analisa, sugere e aplica automaticamente
+        as remediações necessárias para tornar o código ECC compatível com SAP S/4HANA —
+        diretamente dentro do sistema SAP, com total controlo e rastreabilidade.
       </p>
       <div class="cards-4">
         <div class="card">
@@ -116,9 +117,9 @@
           <p>Analisa pacotes, programas, classes e function groups. Integra com ATC (ABAP Test Cockpit) para findings automáticos.</p>
         </div>
         <div class="card">
-          <div class="card-icon">&#x1F916;</div>
-          <h3>Motor de IA</h3>
-          <p>Usa LLM generativa com prompts especializados por regra para sugerir o código de remediação mais adequado ao contexto.</p>
+          <div class="card-icon">&#x1F9E0;</div>
+          <h3>Multi-LLM com Juiz</h3>
+          <p>Vários modelos de IA (Claude, Mistral, GPT e outros) geram propostas em paralelo. Um nível de "juiz" seleciona automaticamente a melhor resposta.</p>
         </div>
         <div class="card">
           <div class="card-icon">&#x26A1;</div>
@@ -127,15 +128,146 @@
         </div>
         <div class="card">
           <div class="card-icon">&#x2705;</div>
-          <h3>Controle Total</h3>
-          <p>Revise cada mudança antes de aplicar. Rollback automático, histórico completo e integração com Transport Orders.</p>
+          <h3>Aprovação Individual</h3>
+          <p>Ecrã de comparação lado a lado (before/after). Cada mudança pode ser aprovada ou rejeitada individualmente antes de ser aplicada.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ARCHITECTURE -->
+  <section id="architecture" class="section section-alt">
+    <div class="container">
+      <div class="section-label">Arquitetura</div>
+      <h2>Como a Solução Está Construída</h2>
+      <p class="section-desc">Arquitetura segura e enterprise-grade baseada em SAP BTP e SAP AI Core</p>
+
+      <div class="arch-diagram">
+
+        <!-- Top 3 layers side by side -->
+        <div class="arch-layers-row">
+
+          <!-- Layer 1: S/4HANA -->
+          <div class="arch-layer layer-s4">
+            <div class="arch-layer-label">SAP S/4HANA</div>
+            <div class="arch-layer-inner">
+              <div class="arch-box box-main">
+                <div class="arch-box-icon">&#x1F4BB;</div>
+                <div>
+                  <strong>ZSMARTFIX</strong>
+                  <span>Transação ABAP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector 1→2 -->
+          <div class="arch-connector">
+            <span class="arch-connector-line"></span>
+            <span class="arch-connector-tip">▶</span>
+            <span class="arch-connector-label">HTTP / RFC</span>
+          </div>
+
+          <!-- Layer 2: BTP AI Core -->
+          <div class="arch-layer layer-btp">
+            <div class="arch-layer-label">SAP BTP — AI Core</div>
+            <div class="arch-layer-inner">
+              <div class="arch-box box-btp">
+                <div class="arch-box-icon">&#x2601;</div>
+                <div>
+                  <strong>AI Core Service</strong>
+                  <span>Orquestração &amp; Compliance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connector 2→3 -->
+          <div class="arch-connector">
+            <span class="arch-connector-line"></span>
+            <span class="arch-connector-tip">▶</span>
+            <span class="arch-connector-label">API Calls</span>
+          </div>
+
+          <!-- Layer 3: LLMs + Judge -->
+          <div class="arch-layer layer-llm">
+            <div class="arch-layer-label">Multi-LLM + Juiz</div>
+            <div class="arch-layer-inner layer-llm-inner">
+              <div class="llm-models">
+                <div class="llm-model model-claude"><span class="llm-icon">&#x25C6;</span><span>Claude</span></div>
+                <div class="llm-model model-mistral"><span class="llm-icon">&#x25C6;</span><span>Mistral</span></div>
+                <div class="llm-model model-gpt"><span class="llm-icon">&#x25C6;</span><span>GPT</span></div>
+                <div class="llm-model model-other"><span class="llm-icon">&#x25C6;</span><span>outros...</span></div>
+              </div>
+              <div class="judge-arrow"><span>▼</span><span class="judge-caption">respostas</span></div>
+              <div class="arch-box box-judge">
+                <div class="arch-box-icon">&#x2696;</div>
+                <div>
+                  <strong>Juiz (Judge LLM)</strong>
+                  <span>Seleciona a melhor resposta</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Return arrow -->
+        <div class="arch-return">
+          <div class="arch-return-line">
+            <span class="arch-return-label">&#x21A9; Código remediado retorna ao S/4HANA</span>
+          </div>
+        </div>
+
+        <!-- Review screen -->
+        <div class="arch-review">
+          <div class="arch-layer-label">Ecrã de Revisão — dentro do S/4HANA (ZSMARTFIX)</div>
+          <div class="review-screen">
+            <div class="review-panel review-before">
+              <div class="review-panel-header">
+                <span class="review-dot red"></span>
+                <span>Código Original (ECC)</span>
+              </div>
+              <div class="review-code">
+                <span class="rc-bad">SELECT SINGLE matnr maktx</span>
+                <span class="rc-bad">  FROM mara INTO (lv_matnr, lv_maktx)</span>
+                <span class="rc-bad">  WHERE matnr = p_matnr.</span>
+              </div>
+            </div>
+            <div class="review-panel review-after">
+              <div class="review-panel-header">
+                <span class="review-dot green"></span>
+                <span>Código Remediado (S/4HANA)</span>
+              </div>
+              <div class="review-code">
+                <span class="rc-good">SELECT SINGLE matnr, maktx</span>
+                <span class="rc-good">  FROM mara INTO (@lv_matnr, @lv_maktx)</span>
+                <span class="rc-good">  WHERE matnr = @p_matnr UP TO 1 ROWS.</span>
+              </div>
+            </div>
+            <div class="review-actions">
+              <button class="review-btn approve">&#x2714; Aprovar</button>
+              <button class="review-btn reject">&#x2718; Rejeitar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Security badge -->
+      <div class="security-banner">
+        <div class="security-icon">&#x1F6E1;</div>
+        <div class="security-text">
+          <strong>Segurança &amp; Compliance garantidos pelo SAP AI Core</strong>
+          <p>Todo o processamento de IA passa exclusivamente pelo SAP AI Core na BTP — nenhum código fonte sai do ambiente SAP controlado. Conformidade total com políticas de segurança empresarial, GDPR e requisitos de auditoria.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
-  <section id="how" class="section section-alt">
+  <section id="how" class="section">
     <div class="container">
       <div class="section-label">Processo</div>
       <h2>Como Funciona</h2>
@@ -161,7 +293,7 @@
           <div class="step-num">3</div>
           <div class="step-body">
             <h4>Remedeie</h4>
-            <p>IA generativa ou regras determinísticas geram o código corrigido por cada finding</p>
+            <p>Vários LLMs geram propostas em paralelo via SAP AI Core. O juiz escolhe a melhor.</p>
           </div>
         </div>
         <div class="step-connector"></div>
@@ -169,7 +301,7 @@
           <div class="step-num">4</div>
           <div class="step-body">
             <h4>Revise</h4>
-            <p>Visualize o diff completo (before/after) e aprove ou rejeite cada mudança</p>
+            <p>Ecrã side-by-side dentro do S/4HANA — aprove ou rejeite cada mudança individualmente</p>
           </div>
         </div>
         <div class="step-connector"></div>
@@ -216,13 +348,12 @@
   </section>
 
   <!-- RULES -->
-  <section id="rules" class="section">
+  <section id="rules" class="section section-alt">
     <div class="container">
       <div class="section-label">Cobertura</div>
       <h2>18 Regras de Transformação</h2>
       <p class="section-desc">Cobertura completa das incompatibilidades mais críticas ECC → S/4HANA</p>
       <div class="rules-grid">
-
         <div class="rule-card ai">
           <div class="rule-badge">IA</div>
           <span class="rule-id">001</span>
@@ -331,58 +462,57 @@
           <h4>VBRK/VBRP Draft</h4>
           <p>Migra acesso a tabelas de faturação para draft</p>
         </div>
-
       </div>
       <div class="rules-legend">
-        <span class="legend-item"><span class="badge-mini ai-mini">IA</span> Remediação por IA Generativa</span>
+        <span class="legend-item"><span class="badge-mini ai-mini">IA</span> Remediação por IA Generativa (Multi-LLM)</span>
         <span class="legend-item"><span class="badge-mini det-mini">DET</span> Regra Determinística</span>
       </div>
     </div>
   </section>
 
   <!-- BENEFITS -->
-  <section id="benefits" class="section section-alt">
+  <section id="benefits" class="section">
     <div class="container">
       <div class="section-label">Valor</div>
       <h2>Benefícios</h2>
       <p class="section-desc">Transformação mais rápida, mais segura e com menor custo</p>
       <div class="benefits-grid">
-        <div class="benefit-card">
+        <div class="benefit-card benefit-highlight">
           <div class="benefit-icon">&#x26A1;</div>
-          <h4>Velocidade</h4>
-          <p>Dias em vez de meses. Processamento paralelo de até 99 background jobs simultâneos.</p>
+          <h4>30% a 60% menos esforço</h4>
+          <p>Redução significativa do esforço de remediação, dependendo da complexidade e volume do código a adaptar. Processamento paralelo de até 99 background jobs simultâneos.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">&#x1F4B0;</div>
           <h4>Redução de Custos</h4>
-          <p>Menos recursos humanos, menos erros, menos retrabalho — ROI imediato na conversão.</p>
+          <p>Menos recursos humanos, menos erros, menos retrabalho — ROI imediato e mensurável na conversão para S/4HANA.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">&#x1F3AF;</div>
-          <h4>Precisão</h4>
-          <p>IA + regras determinísticas garantem conformidade S/4HANA com validação ATC integrada.</p>
+          <h4>Precisão Multi-LLM</h4>
+          <p>Vários modelos LLM compõem a melhor resposta possível. O juiz garante que o código gerado é o mais adequado ao contexto.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F512;</div>
-          <h4>Segurança</h4>
-          <p>Revise antes de aplicar. Rollback automático em caso de erro. Zero risco de perda de código.</p>
+          <div class="benefit-icon">&#x1F6E1;</div>
+          <h4>Segurança &amp; Compliance</h4>
+          <p>SAP AI Core garante que o código nunca sai do ambiente SAP controlado. Conformidade GDPR, auditoria completa e sem exposição de dados.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">&#x1F4CA;</div>
-          <h4>Rastreabilidade</h4>
-          <p>Log completo de cada transformação para auditoria, conformidade e revisão futura.</p>
+          <h4>Controlo Total</h4>
+          <p>Comparação side-by-side antes de aplicar. Rollback automático, histórico completo e aprovação granular por mudança.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">&#x1F680;</div>
           <h4>Escalabilidade</h4>
-          <p>De um único programa a uma migração corporativa inteira — a solução adapta-se ao projeto.</p>
+          <p>De um único programa a uma migração corporativa inteira — a solução adapta-se ao projeto sem alterações de configuração.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SPECS -->
-  <section id="specs" class="section">
+  <section id="specs" class="section section-alt">
     <div class="container">
       <div class="section-label">Especificações</div>
       <h2>Detalhes Técnicos</h2>
@@ -400,16 +530,20 @@
           <div class="spec-val">PROG &nbsp;·&nbsp; CLAS &nbsp;·&nbsp; FUGR &nbsp;·&nbsp; INTF</div>
         </div>
         <div class="spec-row">
+          <div class="spec-key">IA &amp; Modelos</div>
+          <div class="spec-val">SAP AI Core (BTP) &nbsp;·&nbsp; Claude &nbsp;·&nbsp; Mistral &nbsp;·&nbsp; GPT &nbsp;·&nbsp; Juiz automático de respostas</div>
+        </div>
+        <div class="spec-row">
           <div class="spec-key">Integração</div>
-          <div class="spec-val">ATC (ABAP Test Cockpit) &nbsp;·&nbsp; TMS (Transport) &nbsp;·&nbsp; ADT</div>
+          <div class="spec-val">ATC (ABAP Test Cockpit) &nbsp;·&nbsp; TMS (Transport) &nbsp;·&nbsp; ADT &nbsp;·&nbsp; SAP BTP</div>
         </div>
         <div class="spec-row">
           <div class="spec-key">Processamento</div>
           <div class="spec-val">Síncrono &nbsp;·&nbsp; Assíncrono &nbsp;·&nbsp; Background até 99 jobs paralelos</div>
         </div>
         <div class="spec-row">
-          <div class="spec-key">Motor de IA</div>
-          <div class="spec-val">LLM Generativa &nbsp;·&nbsp; Prompts customizáveis por regra &nbsp;·&nbsp; Modo Determinístico</div>
+          <div class="spec-key">Segurança</div>
+          <div class="spec-val">SAP AI Core — código processado no ambiente SAP controlado &nbsp;·&nbsp; Compliance GDPR</div>
         </div>
         <div class="spec-row">
           <div class="spec-key">Base de Dados</div>
@@ -417,7 +551,7 @@
         </div>
         <div class="spec-row">
           <div class="spec-key">Interface</div>
-          <div class="spec-val">Transação ZSMARTFIX &nbsp;·&nbsp; Dashboard &nbsp;·&nbsp; ALV interativo &nbsp;·&nbsp; Diff viewer</div>
+          <div class="spec-val">Transação ZSMARTFIX &nbsp;·&nbsp; Dashboard &nbsp;·&nbsp; ALV interativo &nbsp;·&nbsp; Diff viewer side-by-side</div>
         </div>
         <div class="spec-row">
           <div class="spec-key">Deploy</div>
@@ -433,12 +567,12 @@
       <div class="section-label">Contacto</div>
       <h2>Fale Connosco</h2>
       <p class="section-desc">
-        Interessado no HANALYST SmartFix? A equipa SAP Technology da Inetum Portugal está disponível para uma demonstração.
+        Interessado no HANALYST SmartFix? A Inetum está disponível para uma demonstração personalizada.
       </p>
       <div class="contact-box">
         <div class="contact-info">
-          <h3>SAP Technology<br /><span class="accent">Inetum Portugal</span></h3>
-          <p>Temos experiência profunda em migrações SAP ECC para S/4HANA e desenvolvemos esta solução para acelerar e automatizar o processo de remediação de código ABAP.</p>
+          <h3>Uma solução<br /><span class="accent">desenvolvida pela Inetum</span></h3>
+          <p>A Inetum tem experiência profunda em migrações SAP ECC para S/4HANA e desenvolveu esta solução para acelerar e automatizar o processo de remediação de código ABAP, garantindo qualidade e segurança em cada passo.</p>
           <div class="contact-links">
             <a href="mailto:sap.sc.technology.coordination.portugal@inetum.com" class="contact-link-email">
               <span class="link-icon">&#x2709;</span>
@@ -484,16 +618,16 @@
     <div class="footer-inner">
       <div class="footer-left">
         <img src="https://www.inetum.com/content/dam/inetum/navigation/inetum-logo.svg" alt="Inetum" class="footer-logo" />
-        <p>SAP Technology &nbsp;·&nbsp; Inetum Portugal</p>
+        <p>HANALYST SmartFix &nbsp;·&nbsp; Uma solução Inetum</p>
         <p class="footer-copy">&copy; 2026 Inetum. Todos os direitos reservados.</p>
       </div>
       <div class="footer-right">
         <nav class="footer-nav">
           <a href="#about">Sobre</a>
+          <a href="#architecture">Arquitetura</a>
           <a href="#how">Como Funciona</a>
           <a href="#rules">Regras</a>
           <a href="#benefits">Benefícios</a>
-          <a href="#specs">Técnico</a>
           <a href="#contact">Contacto</a>
         </nav>
         <div class="footer-links">
