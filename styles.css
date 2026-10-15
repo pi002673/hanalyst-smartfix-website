@@ -978,3 +978,92 @@ pre {
   .stat-pill { min-width: 100px; padding: 12px 14px; }
   .rules-grid { grid-template-columns: 1fr 1fr; }
 }
+
+
+/* ── Knowledge Base Row (Architecture section) ── */
+.arch-kb-row {
+  margin-top: 32px;
+}
+
+.arch-kb-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(159,122,234,0.35);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.arch-kb-header {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  color: var(--accent2);
+  background: rgba(159,122,234,0.08);
+}
+
+.arch-kb-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.arch-kb-col {
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+}
+.arch-kb-col:last-child {
+  border-right: none;
+}
+
+.arch-kb-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.arch-kb-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.arch-kb-item small {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.arch-kb-caption {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  font-style: italic;
+}
+
+/* ── arch-return label ── */
+.arch-return {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Responsive KB ── */
+@media (max-width: 720px) {
+  .arch-kb-body {
+    grid-template-columns: 1fr;
+  }
+  .arch-kb-col {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .arch-kb-col:last-child {
+    border-bottom: none;
+  }
+}
+

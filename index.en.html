@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HANALYST SmartFix — Automated ABAP code remediation from ECC to S/4HANA by Inetum" />
+  <meta name="description" content="HANALYST SmartFix — The exclusive accelerator of the Inetum SAP team for automated ABAP code remediation from ECC to S/4HANA" />
   <title>HANALYST SmartFix — ECC → S/4HANA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,36 +37,26 @@
   <section class="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-inner">
-      <div class="hero-tag">Developed by Inetum · Portugal</div>
+      <div class="hero-tag">The exclusive accelerator of the Inetum SAP team · Portugal</div>
       <h1 class="hero-title">
         Automated Code Remediation<br />
         <span class="gradient-text">ECC → S/4HANA</span>
       </h1>
       <p class="hero-sub">
         Transform legacy ABAP code into S/4HANA-ready code in days, not months.<br />
-        Multi-model generative AI with an intelligent judge layer, powered by SAP AI Core.
+        Multi-model generative AI with an intelligent judge layer and proprietary Knowledge Base, powered by SAP AI Core.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Request a Demo</a>
+        <a href="#contact" class="btn btn-primary">Contact Our Team</a>
         <a href="#architecture" class="btn btn-ghost">See Architecture ↓</a>
       </div>
       <div class="hero-stats">
-        <div class="stat-pill">
-          <span class="stat-num">30–60%</span>
-          <span class="stat-label">Effort Reduction</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">18+</span>
-          <span class="stat-label">Transformation Rules</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">Multi-LLM</span>
-          <span class="stat-label">Claude · Mistral · GPT</span>
-        </div>
-        <div class="stat-pill">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Native ABAP</span>
-        </div>
+        <div class="stat-pill"><span class="stat-num">10+</span><span class="stat-label">Years of Experience</span></div>
+        <div class="stat-pill"><span class="stat-num">100+</span><span class="stat-label">SAP Migrations</span></div>
+        <div class="stat-pill"><span class="stat-num">30–60%</span><span class="stat-label">Effort Reduction</span></div>
+        <div class="stat-pill"><span class="stat-num">18+</span><span class="stat-label">Transformation Rules</span></div>
+        <div class="stat-pill"><span class="stat-num">Multi-LLM</span><span class="stat-label">Claude · Mistral · GPT</span></div>
+        <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Native ABAP</span></div>
       </div>
     </div>
     <div class="hero-code-block">
@@ -88,250 +78,157 @@
           <span class="arrow-sym">⟶</span>
         </div>
         <pre class="code-after"><span class="code-comment">* S/4HANA — After SmartFix</span>
-<span class="code-kw">SELECT SINGLE</span> matnr, maktx
+<span class="code-kw">SELECT</span> matnr<span class="code-new">,</span> maktx
   <span class="code-kw">FROM</span> mara
-  <span class="code-kw">INTO</span> (@lv_matnr, @lv_maktx)
-  <span class="code-kw">WHERE</span> matnr = @p_matnr
-  <span class="code-kw">UP TO</span> 1 <span class="code-kw">ROWS</span>.
+  <span class="code-kw">INTO</span> (<span class="code-new">@</span>lv_matnr<span class="code-new">,</span> <span class="code-new">@</span>lv_maktx)
+  <span class="code-kw">WHERE</span> matnr = <span class="code-new">@</span>p_matnr
+  <span class="code-kw">UP TO</span> <span class="code-new">1 ROWS</span>.
 
-<span class="code-kw">DATA</span> gt_fcat <span class="code-kw">TYPE</span>
-  cl_salv_table=&gt;t_column_ref.</pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <div class="section-label">Overview</div>
-      <h2>What is HANALYST SmartFix?</h2>
-      <p class="section-desc">
-        A solution developed by <strong>Inetum</strong> in pure ABAP that automatically analyses, suggests and applies
-        the remediations required to make ECC code compatible with SAP S/4HANA —
-        directly inside the SAP system, with full control and traceability.
-      </p>
-      <div class="cards-4">
-        <div class="card">
-          <div class="card-icon">&#x1F50D;</div>
-          <h3>Intelligent Scanner</h3>
-          <p>Analyses packages, programs, classes and function groups. Integrates with ATC (ABAP Test Cockpit) for automatic findings.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#x1F9E0;</div>
-          <h3>Multi-LLM with Judge</h3>
-          <p>Multiple AI models (Claude, Mistral, GPT and others) generate proposals in parallel. A "judge" layer automatically selects the best answer.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#x26A1;</div>
-          <h3>Deterministic Rules</h3>
-          <p>For predictable transformations, applies exact rules without AI — faster, cheaper, guaranteed results.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">&#x2705;</div>
-          <h3>Individual Approval</h3>
-          <p>Side-by-side comparison screen inside S/4HANA. Each change can be individually approved or rejected before being applied.</p>
-        </div>
+<span class="code-kw">DATA</span> gt_fcat <span class="code-kw">TYPE</span> <span class="code-new">cl_salv_table=&gt;t_column_ref</span>.</pre>
       </div>
     </div>
   </section>
 
   <!-- ARCHITECTURE -->
-  <section id="architecture" class="section section-alt">
+  <section id="architecture" class="section">
     <div class="container">
       <div class="section-label">Architecture</div>
-      <h2>How the Solution is Built</h2>
+      <h2>How the Solution Is Built</h2>
       <p class="section-desc">Secure, enterprise-grade architecture based on SAP BTP and SAP AI Core</p>
 
-      <div class="arch-svg-wrap">
-        <svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" class="arch-svg" role="img" aria-label="HANALYST SmartFix Architecture Diagram">
-          <defs>
-            <linearGradient id="gBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#63b3ed"/><stop offset="100%" stop-color="#4299e1"/>
-            </linearGradient>
-            <linearGradient id="gPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#9f7aea"/><stop offset="100%" stop-color="#805ad5"/>
-            </linearGradient>
-            <linearGradient id="gOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#f6ad55"/><stop offset="100%" stop-color="#ed8936"/>
-            </linearGradient>
-            <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#68d391"/><stop offset="100%" stop-color="#48bb78"/>
-            </linearGradient>
-            <linearGradient id="gArrow1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#63b3ed"/><stop offset="100%" stop-color="#9f7aea"/>
-            </linearGradient>
-            <linearGradient id="gArrow2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#9f7aea"/><stop offset="100%" stop-color="#f6ad55"/>
-            </linearGradient>
-            <linearGradient id="gReturn" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#68d391"/><stop offset="100%" stop-color="#63b3ed"/>
-            </linearGradient>
-            <linearGradient id="gBg1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#141928"/><stop offset="100%" stop-color="#1a2035"/>
-            </linearGradient>
-            <filter id="glow-orange">
-              <feGaussianBlur stdDeviation="4" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="url(#gArrow1)"/>
-            </marker>
-            <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="url(#gArrow2)"/>
-            </marker>
-            <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="url(#gReturn)"/>
-            </marker>
-          </defs>
-
-          <rect width="960" height="540" fill="#0a0d14" rx="12"/>
-          <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(99,179,237,0.04)" stroke-width="1"/>
-          </pattern>
-          <rect width="960" height="540" fill="url(#grid2)" rx="12"/>
-          <circle cx="160" cy="160" r="120" fill="rgba(99,179,237,0.05)"/>
-          <circle cx="800" cy="200" r="100" fill="rgba(159,122,234,0.05)"/>
-          <circle cx="480" cy="420" r="80"  fill="rgba(104,211,145,0.04)"/>
-
-          <!-- Box 1: S/4HANA -->
-          <rect x="28" y="48" width="230" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(99,179,237,0.35)" stroke-width="1.5"/>
-          <rect x="28" y="48" width="230" height="4" rx="2" fill="url(#gBlue)"/>
-          <text x="43" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#63b3ed" letter-spacing="1.5">SAP S/4HANA</text>
-          <circle cx="76" cy="130" r="26" fill="rgba(99,179,237,0.12)" stroke="rgba(99,179,237,0.3)" stroke-width="1"/>
-          <text x="76" y="137" font-size="20" text-anchor="middle" font-family="serif">💻</text>
-          <text x="112" y="122" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#e8ecf4">ZSMARTFIX</text>
-          <text x="112" y="139" font-family="Inter,sans-serif" font-size="11" fill="#8a95b0">ABAP Transaction</text>
-          <rect x="44" y="160" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
-          <text x="58" y="168" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Code scanner</text>
-          <rect x="44" y="176" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
-          <text x="58" y="184" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Side-by-side diff viewer</text>
-          <rect x="44" y="192" width="8" height="8" rx="2" fill="#63b3ed" opacity="0.7"/>
-          <text x="58" y="200" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Individual approval</text>
-
-          <!-- Arrow 1→2 -->
-          <line x1="260" y1="133" x2="328" y2="133" stroke="url(#gArrow1)" stroke-width="2" marker-end="url(#arrowBlue)"/>
-          <text x="294" y="124" font-family="Inter,sans-serif" font-size="9" fill="#8a95b0" text-anchor="middle">HTTP/RFC</text>
-          <line x1="328" y1="120" x2="260" y2="120" stroke="url(#gReturn)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowGreen)" opacity="0.6"/>
-
-          <!-- Box 2: BTP AI Core -->
-          <rect x="332" y="48" width="230" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(159,122,234,0.35)" stroke-width="1.5"/>
-          <rect x="332" y="48" width="230" height="4" rx="2" fill="url(#gPurple)"/>
-          <text x="347" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#9f7aea" letter-spacing="1.5">SAP BTP — AI CORE</text>
-          <circle cx="380" cy="130" r="26" fill="rgba(159,122,234,0.12)" stroke="rgba(159,122,234,0.3)" stroke-width="1"/>
-          <text x="380" y="137" font-size="20" text-anchor="middle" font-family="serif">☁️</text>
-          <text x="416" y="122" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#e8ecf4">AI Core Service</text>
-          <text x="416" y="139" font-family="Inter,sans-serif" font-size="11" fill="#8a95b0">Orchestration &amp; Security</text>
-          <rect x="348" y="160" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
-          <text x="362" y="168" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">GDPR Compliance</text>
-          <rect x="348" y="176" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
-          <text x="362" y="184" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">No SAP data leakage</text>
-          <rect x="348" y="192" width="8" height="8" rx="2" fill="#9f7aea" opacity="0.7"/>
-          <text x="362" y="200" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Multi-model routing</text>
-
-          <!-- Arrow 2→3 -->
-          <line x1="564" y1="133" x2="632" y2="133" stroke="url(#gArrow2)" stroke-width="2" marker-end="url(#arrowPurple)"/>
-          <text x="598" y="124" font-family="Inter,sans-serif" font-size="9" fill="#8a95b0" text-anchor="middle">API Calls</text>
-          <line x1="632" y1="120" x2="564" y2="120" stroke="url(#gReturn)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowGreen)" opacity="0.6"/>
-
-          <!-- Box 3: Multi-LLM -->
-          <rect x="636" y="48" width="296" height="170" rx="12" fill="url(#gBg1)" stroke="rgba(246,173,85,0.35)" stroke-width="1.5"/>
-          <rect x="636" y="48" width="296" height="4" rx="2" fill="url(#gOrange)"/>
-          <text x="651" y="73" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#f6ad55" letter-spacing="1.5">MULTI-LLM + JUDGE</text>
-          <rect x="651" y="84" width="58" height="38" rx="8" fill="rgba(99,179,237,0.1)" stroke="rgba(99,179,237,0.35)" stroke-width="1"/>
-          <circle cx="665" cy="97" r="5" fill="#63b3ed"/>
-          <text x="674" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#63b3ed">Claude</text>
-          <text x="659" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">Anthropic</text>
-          <rect x="717" y="84" width="58" height="38" rx="8" fill="rgba(159,122,234,0.1)" stroke="rgba(159,122,234,0.35)" stroke-width="1"/>
-          <circle cx="731" cy="97" r="5" fill="#9f7aea"/>
-          <text x="740" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#9f7aea">Mistral</text>
-          <text x="724" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">Mistral AI</text>
-          <rect x="783" y="84" width="58" height="38" rx="8" fill="rgba(104,211,145,0.1)" stroke="rgba(104,211,145,0.35)" stroke-width="1"/>
-          <circle cx="797" cy="97" r="5" fill="#68d391"/>
-          <text x="806" y="101" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#68d391">GPT</text>
-          <text x="788" y="115" font-family="Inter,sans-serif" font-size="8" fill="#8a95b0">OpenAI</text>
-          <rect x="849" y="84" width="68" height="38" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-          <text x="883" y="99" font-family="Inter,sans-serif" font-size="11" fill="#5a6480" text-anchor="middle">···</text>
-          <text x="883" y="115" font-family="Inter,sans-serif" font-size="8" fill="#5a6480" text-anchor="middle">others</text>
-          <line x1="680" y1="122" x2="780" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
-          <line x1="746" y1="122" x2="790" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
-          <line x1="812" y1="122" x2="800" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
-          <line x1="870" y1="122" x2="810" y2="148" stroke="#f6ad55" stroke-width="1" opacity="0.4"/>
-          <rect x="720" y="148" width="192" height="52" rx="8" fill="rgba(246,173,85,0.1)" stroke="rgba(246,173,85,0.45)" stroke-width="1.5" filter="url(#glow-orange)"/>
-          <text x="740" y="170" font-size="16" font-family="serif">⚖️</text>
-          <text x="762" y="168" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#f6ad55">Judge (LLM)</text>
-          <text x="762" y="183" font-family="Inter,sans-serif" font-size="10" fill="#8a95b0">Selects the best response</text>
-
-          <!-- Return arc -->
-          <path d="M 816 200 Q 816 240 480 240 Q 144 240 143 200" fill="none" stroke="url(#gReturn)" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowGreen)"/>
-          <rect x="355" y="228" width="250" height="20" rx="4" fill="rgba(104,211,145,0.08)"/>
-          <text x="480" y="242" font-family="Inter,sans-serif" font-size="10" fill="#68d391" text-anchor="middle" font-weight="600">↩ Remediated code returns to S/4HANA</text>
-
-          <!-- Review screen -->
-          <rect x="28" y="278" width="904" height="230" rx="12" fill="url(#gBg1)" stroke="rgba(104,211,145,0.3)" stroke-width="1.5"/>
-          <rect x="28" y="278" width="904" height="4" rx="2" fill="url(#gGreen)"/>
-          <text x="44" y="303" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#68d391" letter-spacing="1.5">REVIEW SCREEN — INSIDE S/4HANA (ZSMARTFIX)</text>
-          <line x1="480" y1="316" x2="480" y2="490" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-
-          <!-- Left: Original ECC -->
-          <rect x="44" y="316" width="420" height="24" rx="4" fill="rgba(252,129,129,0.07)"/>
-          <circle cx="60" cy="328" r="5" fill="#fc8181"/>
-          <text x="72" y="332" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#fc8181">Original Code (ECC)</text>
-          <rect x="44" y="348" width="420" height="130" rx="6" fill="rgba(0,0,0,0.25)"/>
-          <text x="60" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">SELECT SINGLE</text>
-          <text x="172" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> matnr maktx</text>
-          <text x="60" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  FROM</text>
-          <text x="107" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> mara</text>
-          <text x="60" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  INTO</text>
-          <text x="107" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> (lv_matnr, lv_maktx)</text>
-          <text x="60" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  WHERE</text>
-          <text x="115" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> matnr = p_matnr.</text>
-          <text x="60" y="448" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE-POOLS</text>
-          <text x="152" y="448" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9">: slis.</text>
-          <text x="60" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">DATA</text>
-          <text x="91" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> gt_fcat </text>
-          <text x="155" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE</text>
-          <text x="183" y="466" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> slis_t_fieldcat_alv.</text>
-
-          <!-- Right: Remediated S/4HANA -->
-          <rect x="496" y="316" width="420" height="24" rx="4" fill="rgba(104,211,145,0.07)"/>
-          <circle cx="512" cy="328" r="5" fill="#68d391"/>
-          <text x="524" y="332" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#68d391">Remediated Code (S/4HANA)</text>
-          <rect x="496" y="348" width="420" height="130" rx="6" fill="rgba(0,0,0,0.25)"/>
-          <text x="512" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">SELECT SINGLE</text>
-          <text x="624" y="368" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> matnr, maktx</text>
-          <text x="512" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  FROM</text>
-          <text x="559" y="386" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> mara</text>
-          <text x="512" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  INTO</text>
-          <text x="559" y="404" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> (@lv_matnr, @lv_maktx)</text>
-          <text x="512" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  WHERE</text>
-          <text x="567" y="422" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> matnr = @p_matnr</text>
-          <text x="512" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">  UP TO</text>
-          <text x="563" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> 1 </text>
-          <text x="584" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">ROWS</text>
-          <text x="625" y="440" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9">.</text>
-          <text x="512" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">DATA</text>
-          <text x="543" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#c9d1d9"> gt_fcat </text>
-          <text x="607" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#ff7b72">TYPE</text>
-          <text x="635" y="458" font-family="'JetBrains Mono',monospace" font-size="11" fill="#68d391"> cl_salv_table=&gt;t_column_ref.</text>
-
-          <!-- Buttons -->
-          <rect x="44" y="492" width="110" height="28" rx="6" fill="rgba(104,211,145,0.15)" stroke="rgba(104,211,145,0.4)" stroke-width="1"/>
-          <text x="99" y="510" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#68d391" text-anchor="middle">✔ Approve</text>
-          <rect x="164" y="492" width="110" height="28" rx="6" fill="rgba(252,129,129,0.1)" stroke="rgba(252,129,129,0.35)" stroke-width="1"/>
-          <text x="219" y="510" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#fc8181" text-anchor="middle">✘ Reject</text>
-          <text x="310" y="510" font-family="Inter,sans-serif" font-size="10" fill="#5a6480">← Each change approved or rejected individually</text>
-        </svg>
-      </div>
-
-      <!-- Security badge -->
-      <div class="security-banner">
-        <div class="security-icon">&#x1F6E1;</div>
-        <div class="security-text">
-          <strong>Security &amp; Compliance guaranteed by SAP AI Core</strong>
-          <p>All AI processing goes exclusively through SAP AI Core on BTP — no source code ever leaves the controlled SAP environment. Full compliance with enterprise security policies, GDPR and audit requirements.</p>
+      <div class="arch-diagram">
+        <div class="arch-box arch-sap">
+          <div class="arch-box-header">SAP S/4HANA 💻</div>
+          <div class="arch-box-body">
+            <div class="arch-item arch-item-main">ZSMARTFIX</div>
+            <div class="arch-sub">ABAP Transaction</div>
+            <div class="arch-sub">Code scanner</div>
+            <div class="arch-sub">Side-by-side diff viewer</div>
+            <div class="arch-sub">Individual approval</div>
+          </div>
+        </div>
+        <div class="arch-arrow-mid"><span>HTTP/RFC</span><span class="arch-arr">⇄</span></div>
+        <div class="arch-box arch-btp">
+          <div class="arch-box-header">SAP BTP — AI CORE ☁️</div>
+          <div class="arch-box-body">
+            <div class="arch-item">AI Core Service</div>
+            <div class="arch-sub">Orchestration &amp; Security</div>
+            <div class="arch-sub">GDPR Compliance</div>
+            <div class="arch-sub">No SAP data leakage</div>
+            <div class="arch-sub">Multi-model routing</div>
+          </div>
+        </div>
+        <div class="arch-arrow-mid"><span>API Calls</span><span class="arch-arr">⇄</span></div>
+        <div class="arch-box arch-llm">
+          <div class="arch-box-header">MULTI-LLM + JUDGE</div>
+          <div class="arch-box-body">
+            <div class="arch-llm-item"><span class="llm-badge claude">Claude</span><span class="llm-sub">Anthropic</span></div>
+            <div class="arch-llm-item"><span class="llm-badge mistral">Mistral</span><span class="llm-sub">Mistral AI</span></div>
+            <div class="arch-llm-item"><span class="llm-badge gpt">GPT</span><span class="llm-sub">OpenAI</span></div>
+            <div class="arch-llm-item"><span class="llm-badge other">···</span><span class="llm-sub">others</span></div>
+            <div class="arch-judge">⚖️ Judge LLM<br /><small>Selects the best response</small></div>
+          </div>
         </div>
       </div>
 
+      <div class="arch-kb-row">
+        <div class="arch-kb-box">
+          <div class="arch-kb-header">📚 INETUM KNOWLEDGE BASE</div>
+          <div class="arch-kb-body">
+            <div class="arch-kb-col">
+              <div class="arch-kb-item">📖 <strong>Inetum Cookbooks</strong><br /><small>Proprietary guides developed across 100+ migrations</small></div>
+            </div>
+            <div class="arch-kb-col">
+              <div class="arch-kb-item">📝 <strong>SAP Notes</strong><br /><small>SAP technical references and relevant OSS notes</small></div>
+            </div>
+            <div class="arch-kb-col">
+              <div class="arch-kb-item">🧑‍💼 <strong>Consultant Experience</strong><br /><small>Guidelines from 10+ years of ECC→S/4HANA migrations</small></div>
+            </div>
+          </div>
+          <div class="arch-kb-caption">↑ Feeds the remediation engine with real Inetum project context</div>
+        </div>
+      </div>
+
+      <div class="arch-return">↩ Remediated code returns to S/4HANA</div>
+
+      <div class="review-mockup">
+        <div class="review-title">REVIEW SCREEN — INSIDE S/4HANA (ZSMARTFIX)</div>
+        <div class="review-screen">
+          <div class="review-panel">
+            <div class="review-panel-header"><span class="review-dot red"></span> Original Code (ECC)</div>
+            <div class="review-code">
+              <span class="rc-bad">SELECT SINGLE matnr maktx</span>
+              <span class="rc-bad">  FROM mara</span>
+              <span class="rc-bad">  INTO (lv_matnr, lv_maktx)</span>
+              <span class="rc-bad">  WHERE matnr = p_matnr.</span>
+              <span>&nbsp;</span>
+              <span class="rc-bad">TYPE-POOLS : slis.</span>
+              <span class="rc-bad">DATA gt_fcat TYPE slis_t_fieldcat_alv.</span>
+            </div>
+          </div>
+          <div class="review-panel">
+            <div class="review-panel-header"><span class="review-dot green"></span> Remediated Code (S/4HANA)</div>
+            <div class="review-code">
+              <span class="rc-good">SELECT matnr, maktx</span>
+              <span class="rc-good">  FROM mara</span>
+              <span class="rc-good">  INTO (@lv_matnr, @lv_maktx)</span>
+              <span class="rc-good">  WHERE matnr = @p_matnr</span>
+              <span class="rc-good">  UP TO 1 ROWS.</span>
+              <span>&nbsp;</span>
+              <span class="rc-good">DATA gt_fcat TYPE cl_salv_table=&gt;t_column_ref.</span>
+            </div>
+          </div>
+          <div class="review-actions">
+            <button class="review-btn approve">✔ Approve</button>
+            <button class="review-btn reject">✘ Reject</button>
+            <span style="font-size:12px;color:var(--text-muted);margin-left:auto;">← Each change approved or rejected individually</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="security-banner">
+        <div class="security-icon">🛡️</div>
+        <div class="security-text">
+          <strong>Security &amp; Compliance guaranteed by SAP AI Core</strong>
+          <p>All AI processing passes exclusively through SAP AI Core on BTP — no source code leaves the controlled SAP environment. Full compliance with enterprise security policies, GDPR and audit requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <div class="section-label">Overview</div>
+      <h2>What is HANALYST SmartFix?</h2>
+      <p class="section-desc">A tool developed and used exclusively by the Inetum SAP team — specialists in ECC to S/4HANA migrations for over 10 years and with more than 100 completed migrations. SmartFix is the accelerator that enables our team to deliver faster, safer, higher-quality migrations in native ABAP, directly within the client's SAP system.</p>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h4>Intelligent Scanner</h4>
+          <p>Analyses packages, programs, classes and function groups. Integrates with ATC (ABAP Test Cockpit) for automatic findings.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h4>Multi-LLM with Judge</h4>
+          <p>Multiple AI models (Claude, Mistral, GPT and others) generate proposals in parallel. A "judge" layer automatically selects the best response.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h4>Inetum Knowledge Base</h4>
+          <p>Integrates proprietary cookbooks, SAP notes and guidelines developed over 10+ years of migration experience — feeding the remediation engine with real project context. The accumulated expertise of the Inetum team encoded as living rules.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h4>Deterministic Rules</h4>
+          <p>For predictable transformations, applies exact rules without AI — faster, cheaper, guaranteed results.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h4>Individual Approval</h4>
+          <p>Side-by-side comparison screen (before/after). Each change can be approved or rejected individually before being applied.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -342,76 +239,23 @@
       <h2>How It Works</h2>
       <p class="section-desc">6 simple steps from scan to production deployment</p>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Select</h4>
-            <p>Choose the package or ABAP objects to analyse (PROG, CLAS, FUGR, INTF)</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Select</h4><p>Choose the package or ABAP objects to analyse (PROG, CLAS, FUGR, INTF)</p></div></div>
         <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Scan</h4>
-            <p>SmartFix scans the code and identifies legacy patterns — with or without ATC</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Analyse</h4><p>SmartFix scans the code and identifies legacy patterns — with or without ATC</p></div></div>
         <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Remediate</h4>
-            <p>Multiple LLMs generate proposals via SAP AI Core in parallel. The judge picks the best.</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Remediate</h4><p>Multiple LLMs generate proposals in parallel via SAP AI Core, enriched by the Inetum Knowledge Base. The judge picks the best.</p></div></div>
         <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Review</h4>
-            <p>Side-by-side screen inside S/4HANA — approve or reject each change individually</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Review</h4><p>Side-by-side screen inside S/4HANA — approve or reject each change individually</p></div></div>
         <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>Apply</h4>
-            <p>One click applies all approved changes with a complete audit trail</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><h4>Apply</h4><p>One click applies all approved changes with a full audit trail</p></div></div>
         <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-num">6</div>
-          <div class="step-body">
-            <h4>Deploy</h4>
-            <p>Create transport requests and bring S/4HANA-ready code to production</p>
-          </div>
-        </div>
+        <div class="step"><div class="step-num">6</div><div class="step-content"><h4>Deploy</h4><p>Create transport requests and bring S/4HANA-ready code to production</p></div></div>
       </div>
-
       <div class="modes-grid">
-        <div class="mode-card">
-          <span class="mode-num">Mode 1</span>
-          <h4>Object Scan</h4>
-          <p>Analyses SAP packages and objects directly via TADIR</p>
-        </div>
-        <div class="mode-card">
-          <span class="mode-num">Mode 2</span>
-          <h4>File Upload</h4>
-          <p>Imports external code files for analysis</p>
-        </div>
-        <div class="mode-card">
-          <span class="mode-num">Mode 3</span>
-          <h4>Review &amp; Apply</h4>
-          <p>View, approve and apply pending remediations</p>
-        </div>
-        <div class="mode-card">
-          <span class="mode-num">Mode 4</span>
-          <h4>View Log</h4>
-          <p>Browse the complete history of all executions</p>
-        </div>
+        <div class="mode-card"><div class="mode-num">Mode 1</div><h4>Object Scan</h4><p>Analyses SAP packages and objects directly via TADIR</p></div>
+        <div class="mode-card"><div class="mode-num">Mode 2</div><h4>File Upload</h4><p>Imports external code files for analysis</p></div>
+        <div class="mode-card"><div class="mode-num">Mode 3</div><h4>Review &amp; Apply</h4><p>View, approve and apply pending remediations</p></div>
+        <div class="mode-card"><div class="mode-num">Mode 4</div><h4>View Log</h4><p>Access the full history of all applied remediations</p></div>
       </div>
     </div>
   </section>
@@ -420,117 +264,27 @@
   <section id="rules" class="section section-alt">
     <div class="container">
       <div class="section-label">Coverage</div>
-      <h2>18 Transformation Rules</h2>
-      <p class="section-desc">Full coverage of the most critical ECC → S/4HANA incompatibilities</p>
+      <h2>18+ Transformation Rules</h2>
+      <p class="section-desc">Coverage of the most critical ECC → S/4HANA incompatibilities</p>
       <div class="rules-grid">
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">001</span>
-          <h4>MATNR Length</h4>
-          <p>Extends material number fields to 18 digits</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">002</span>
-          <h4>Obsolete Tables</h4>
-          <p>Replaces tables removed in S/4HANA</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">003</span>
-          <h4>Obsolete Functions</h4>
-          <p>Modernises discontinued function modules</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">004</span>
-          <h4>SELECT SINGLE</h4>
-          <p>Optimises queries with host variables and UP TO 1 ROWS</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">005</span>
-          <h4>Binary Search &amp; Sort</h4>
-          <p>Modernises sorting and binary search logic</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">006</span>
-          <h4>Removed Fields</h4>
-          <p>Locates and migrates discontinued fields</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">007</span>
-          <h4>Call Transaction</h4>
-          <p>Modernises legacy transaction calls</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">008</span>
-          <h4>Business Partner</h4>
-          <p>Migrates customer/vendor logic to Business Partner</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">009</span>
-          <h4>Obsolete Includes</h4>
-          <p>Removes includes discontinued in S/4HANA</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">010</span>
-          <h4>Data Types</h4>
-          <p>Modernises data types to S/4HANA standards</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">011</span>
-          <h4>Credit Management</h4>
-          <p>Updates credit check logic for S/4HANA</p>
-        </div>
-        <div class="rule-card ai">
-          <div class="rule-badge">AI</div>
-          <span class="rule-id">012</span>
-          <h4>Output Management</h4>
-          <p>Modernises output management to BRF+</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">013</span>
-          <h4>SELECT * Fix</h4>
-          <p>Specifies explicit columns in SELECT *</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">014</span>
-          <h4>Type Pools</h4>
-          <p>Automatically removes obsolete TYPE-POOLS</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">015</span>
-          <h4>Move Obsolete</h4>
-          <p>Migrates MOVE statements to modern syntax</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">016</span>
-          <h4>Logistics Obsolete</h4>
-          <p>Updates discontinued logistics structures</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">017</span>
-          <h4>SELECT SINGLE UP1</h4>
-          <p>Transforms SELECT SINGLE with an exact rule</p>
-        </div>
-        <div class="rule-card det">
-          <div class="rule-badge det-badge">DET</div>
-          <span class="rule-id">018</span>
-          <h4>VBRK/VBRP Draft</h4>
-          <p>Migrates billing table access to draft API</p>
-        </div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">001</span><h4>MATNR Length</h4><p>Extends material fields to 18 digits</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">002</span><h4>Obsolete Tables</h4><p>Replaces tables removed in S/4HANA</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">003</span><h4>Obsolete Functions</h4><p>Modernises discontinued function modules</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">004</span><h4>SELECT SINGLE</h4><p>Optimises queries with host variables and UP TO 1 ROWS</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">005</span><h4>Binary Search &amp; Sort</h4><p>Modernises sorting and search logic</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">006</span><h4>Removed Fields</h4><p>Locates and migrates discontinued fields</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">007</span><h4>Call Transaction</h4><p>Modernises legacy transaction calls</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">008</span><h4>Business Partner</h4><p>Migrates customer/vendor logic to BP</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">009</span><h4>Obsolete Includes</h4><p>Removes discontinued S/4HANA includes</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">010</span><h4>Data Types</h4><p>Modernises data types to S/4HANA standards</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">011</span><h4>Credit Management</h4><p>Updates credit check logic</p></div>
+        <div class="rule-card"><span class="badge-mini ai-mini">AI</span><span class="rule-id">012</span><h4>Output Management</h4><p>Modernises output management to BRF+</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">013</span><h4>SELECT * Fix</h4><p>Specifies explicit columns in SELECT *</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">014</span><h4>Type Pools</h4><p>Removes obsolete TYPE-POOLS automatically</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">015</span><h4>Move Obsolete</h4><p>Migrates MOVE statements to modern syntax</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">016</span><h4>Logistics Obsolete</h4><p>Updates discontinued logistics structures</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">017</span><h4>SELECT SINGLE UP1</h4><p>Transforms SELECT SINGLE with exact rule</p></div>
+        <div class="rule-card"><span class="badge-mini det-mini">DET</span><span class="rule-id">018</span><h4>VBRK/VBRP Draft</h4><p>Migrates billing table access to draft</p></div>
       </div>
       <div class="rules-legend">
         <span class="legend-item"><span class="badge-mini ai-mini">AI</span> Generative AI Remediation (Multi-LLM)</span>
@@ -544,37 +298,42 @@
     <div class="container">
       <div class="section-label">Value</div>
       <h2>Benefits</h2>
-      <p class="section-desc">Faster, safer and lower-cost transformation</p>
+      <p class="section-desc">Faster, safer transformation at lower cost</p>
       <div class="benefits-grid">
         <div class="benefit-card benefit-highlight">
-          <div class="benefit-icon">&#x26A1;</div>
+          <div class="benefit-icon">⚡</div>
           <h4>30% to 60% less effort</h4>
-          <p>Significant reduction in remediation effort, depending on the complexity and volume of code to adapt. Parallel processing of up to 99 simultaneous background jobs.</p>
+          <p>Significant reduction in remediation effort, depending on the complexity and volume of code to be adapted. Parallel processing of up to 99 simultaneous background jobs.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F4B0;</div>
+          <div class="benefit-icon">💰</div>
           <h4>Cost Reduction</h4>
-          <p>Fewer human resources, fewer errors, less rework — immediate and measurable ROI on your S/4HANA conversion.</p>
+          <p>Fewer human resources, fewer errors, less rework — immediate and measurable ROI in the S/4HANA conversion.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F3AF;</div>
+          <div class="benefit-icon">🎯</div>
           <h4>Multi-LLM Precision</h4>
-          <p>Multiple LLM models compose the best possible answer. The judge ensures the generated code is the most appropriate for each context.</p>
+          <p>Multiple LLM models compose the best possible response. The judge ensures the generated code is most suited to the context.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F6E1;</div>
+          <div class="benefit-icon">📚</div>
+          <h4>Proprietary Knowledge Base</h4>
+          <p>10+ years and 100+ migrations of accumulated expertise as living rules — Inetum cookbooks, SAP notes and consultant guidelines power every remediation.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🛡️</div>
           <h4>Security &amp; Compliance</h4>
-          <p>SAP AI Core ensures code never leaves the controlled SAP environment. GDPR compliance, complete audit trail and no data exposure.</p>
+          <p>SAP AI Core ensures code never leaves the controlled SAP environment. GDPR compliance, full audit trail, no data exposure.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F4CA;</div>
+          <div class="benefit-icon">📊</div>
           <h4>Full Control</h4>
-          <p>Side-by-side comparison before applying. Automatic rollback, complete history and granular per-change approval.</p>
+          <p>Side-by-side comparison before applying. Automatic rollback, complete history and granular approval per change.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">&#x1F680;</div>
+          <div class="benefit-icon">🚀</div>
           <h4>Scalability</h4>
-          <p>From a single program to an entire corporate migration — the solution adapts to your project without configuration changes.</p>
+          <p>From a single programme to an entire enterprise migration — the solution adapts to the project without configuration changes.</p>
         </div>
       </div>
     </div>
@@ -586,46 +345,17 @@
       <div class="section-label">Specifications</div>
       <h2>Technical Details</h2>
       <div class="specs-table">
-        <div class="spec-row">
-          <div class="spec-key">Platform</div>
-          <div class="spec-val">SAP ECC 6.0+ &nbsp;·&nbsp; SAP S/4HANA 1909+</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Language</div>
-          <div class="spec-val">100% Native ABAP — no external dependencies</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Object Types</div>
-          <div class="spec-val">PROG &nbsp;·&nbsp; CLAS &nbsp;·&nbsp; FUGR &nbsp;·&nbsp; INTF</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">AI &amp; Models</div>
-          <div class="spec-val">SAP AI Core (BTP) &nbsp;·&nbsp; Claude &nbsp;·&nbsp; Mistral &nbsp;·&nbsp; GPT &nbsp;·&nbsp; Automatic judge layer</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Integration</div>
-          <div class="spec-val">ATC (ABAP Test Cockpit) &nbsp;·&nbsp; TMS (Transport) &nbsp;·&nbsp; ADT &nbsp;·&nbsp; SAP BTP</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Processing</div>
-          <div class="spec-val">Synchronous &nbsp;·&nbsp; Asynchronous &nbsp;·&nbsp; Background up to 99 parallel jobs</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Security</div>
-          <div class="spec-val">SAP AI Core — code processed in controlled SAP environment &nbsp;·&nbsp; GDPR compliant</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Database</div>
-          <div class="spec-val">Dedicated Z tables — KB, Work, Log, Config, Rules, Status</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Interface</div>
-          <div class="spec-val">Transaction ZSMARTFIX &nbsp;·&nbsp; Dashboard &nbsp;·&nbsp; Interactive ALV &nbsp;·&nbsp; Side-by-side diff viewer</div>
-        </div>
-        <div class="spec-row">
-          <div class="spec-key">Deployment</div>
-          <div class="spec-val">abapGit &nbsp;·&nbsp; Transport Request &nbsp;·&nbsp; Installation in &lt; 1 hour</div>
-        </div>
+        <div class="spec-row"><div class="spec-key">Platform</div><div class="spec-val">SAP ECC 6.0+ &nbsp;·&nbsp; SAP S/4HANA 1909+</div></div>
+        <div class="spec-row"><div class="spec-key">Language</div><div class="spec-val">100% Native ABAP — no external dependencies</div></div>
+        <div class="spec-row"><div class="spec-key">Object Types</div><div class="spec-val">PROG &nbsp;·&nbsp; CLAS &nbsp;·&nbsp; FUGR &nbsp;·&nbsp; INTF</div></div>
+        <div class="spec-row"><div class="spec-key">AI &amp; Models</div><div class="spec-val">SAP AI Core (BTP) &nbsp;·&nbsp; Claude &nbsp;·&nbsp; Mistral &nbsp;·&nbsp; GPT &nbsp;·&nbsp; Automatic response judge</div></div>
+        <div class="spec-row"><div class="spec-key">Knowledge Base</div><div class="spec-val">Inetum Cookbooks &nbsp;·&nbsp; SAP Notes &nbsp;·&nbsp; Consultant guidelines &nbsp;·&nbsp; Updatable by the team</div></div>
+        <div class="spec-row"><div class="spec-key">Integration</div><div class="spec-val">ATC (ABAP Test Cockpit) &nbsp;·&nbsp; TMS (Transport) &nbsp;·&nbsp; ADT &nbsp;·&nbsp; SAP BTP</div></div>
+        <div class="spec-row"><div class="spec-key">Processing</div><div class="spec-val">Synchronous &nbsp;·&nbsp; Asynchronous &nbsp;·&nbsp; Background up to 99 parallel jobs</div></div>
+        <div class="spec-row"><div class="spec-key">Security</div><div class="spec-val">SAP AI Core — code processed in controlled SAP environment &nbsp;·&nbsp; GDPR Compliance</div></div>
+        <div class="spec-row"><div class="spec-key">Database</div><div class="spec-val">Dedicated Z tables — KB, Work, Log, Config, Rules, Status</div></div>
+        <div class="spec-row"><div class="spec-key">Interface</div><div class="spec-val">ZSMARTFIX transaction &nbsp;·&nbsp; Dashboard &nbsp;·&nbsp; Interactive ALV &nbsp;·&nbsp; Side-by-side diff viewer</div></div>
+        <div class="spec-row"><div class="spec-key">Deployment</div><div class="spec-val">abapGit &nbsp;·&nbsp; Transport Request &nbsp;·&nbsp; Installation in &lt; 1 hour</div></div>
       </div>
     </div>
   </section>
@@ -634,14 +364,12 @@
   <section id="contact" class="section section-contact">
     <div class="container">
       <div class="section-label">Contact</div>
-      <h2>Get in Touch</h2>
-      <p class="section-desc">
-        Interested in HANALYST SmartFix? Inetum is available for a personalised demonstration.
-      </p>
+      <h2>Get in Touch with Our Team</h2>
+      <p class="section-desc">Planning a SAP ECC to S/4HANA migration? The Inetum SAP team, with over 10 years of experience and 100+ completed migrations, is available to assess your project.</p>
       <div class="contact-box">
         <div class="contact-info">
-          <h3>A solution<br /><span class="accent">developed by Inetum</span></h3>
-          <p>Inetum has deep expertise in SAP ECC to S/4HANA migrations and developed this solution to accelerate and automate the ABAP code remediation process, ensuring quality and security at every step.</p>
+          <h3>An exclusive solution<br /><span class="accent">from the Inetum team</span></h3>
+          <p>Inetum has a specialist SAP ECC to S/4HANA migration team with over 10 years of experience. With more than 100 completed migrations, we built HANALYST SmartFix as our internal accelerator — to deliver faster, safer, higher-quality migrations to our clients at every step.</p>
           <div class="contact-links">
             <a href="mailto:sap.sc.technology.coordination.portugal@inetum.com" class="contact-link-email">
               <span class="link-icon">&#x2709;</span>
@@ -711,3 +439,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
